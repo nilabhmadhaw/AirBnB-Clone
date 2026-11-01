@@ -8,7 +8,7 @@ module.exports = class Home {
         this.location = location;
         this.price = price;
         this.image = image
-        this.guests = guests;
+        this.ratings = ratings;
         this.bedrooms = bedrooms;
         this.description = description;
     }

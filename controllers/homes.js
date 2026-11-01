@@ -14,7 +14,7 @@ exports.postAddHome = (req,res,next)=>{
     location: req.body.location,
     price: req.body.price,
     image: req.body.image,
-    guests: req.body.guests,
+    ratings: req.body.ratings,
     bedrooms: req.body.bedrooms,
     description: req.body.description
 });
@@ -25,3 +25,4 @@ exports.getHomes = (req,res,next)=>{
     console.log(registerdHomes);
     res.render('home',{registerdHomes: registerdHomes, pageTitle:'airbnb Home'})
 };
+ 
