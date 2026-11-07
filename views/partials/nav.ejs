@@ -1,35 +1,30 @@
-<header class="border-b border-slate-200 bg-white">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="/" class="text-2xl font-bold tracking-tight text-rose-600 transition hover:text-rose-700">
+
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-white">
+    <div class="flex w-full items-center justify-start gap-4 px-4 py-4 sm:px-6 lg:px-8">
+
+        <a href="/" class="flex items-center gap-1 text-2xl font-extrabold tracking-tight text-rose-600 transition hover:text-rose-700">
+            <img src="/images/airbnb-image.png" alt="" class="h-8 w-8 shrink-0 object-contain">
             airbnb
         </a>
 
-        <div class="flex items-center gap-2 sm:gap-4">
-            <span class="hidden text-sm font-medium text-slate-500 md:inline">
-                Find your next stay
-            </span>
+        <nav class="flex items-center gap-3" aria-label="Main navigation">
 
-            <nav class="flex items-center gap-3" aria-label="Main navigation">
-                <% if (currentPath === '/') { %>
-                    <a href="/" class="inline-flex items-center justify-center rounded-lg border border-rose-600 bg-rose-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:border-rose-700 hover:bg-rose-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2">
-                        Home
-                    </a>
-                <% } else { %>
-                    <a href="/" class="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-rose-200 hover:bg-rose-50 hover:text-rose-600 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2">
-                        Home
-                    </a>
-                <% } %>
+            <% const active = "inline-flex items-center justify-center rounded-lg border border-rose-600 bg-rose-600 px-4 py-2.5 text-sm font-semibold tracking-wide text-white shadow-sm transition hover:border-rose-700 hover:bg-rose-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2"; %>
 
-                <% if (currentPath === '/host/add-home') { %>
-                    <a href="/host/add-home" class="inline-flex items-center justify-center rounded-lg border border-rose-600 bg-rose-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:border-rose-700 hover:bg-rose-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2">
-                        Add Home
-                    </a>
-                <% } else { %>
-                    <a href="/host/add-home" class="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-rose-200 hover:bg-rose-50 hover:text-rose-600 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2">
-                        Add Home
-                    </a>
-                <% } %>
-            </nav>
-        </div>
+            <% const inactive = "inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold tracking-wide text-slate-700 shadow-sm transition hover:border-rose-200 hover:bg-rose-50 hover:text-rose-600 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2"; %>
+
+            <a href="/" class="<%= currentPath === '/' ? active : inactive %>">
+                Home
+            </a>
+
+            <a href="/host/add-home" class="<%= currentPath === '/host/add-home' ? active : inactive %>">
+                Add Home
+            </a>
+
+            <a href="/mybookings" class="<%= currentPath === '/store/mybookings.ejs' ? active : inactive %>">
+                My Bookings
+            </a>
+
+        </nav>
     </div>
 </header>

@@ -1,0 +1,107 @@
+<%- include('../partials/head') %>
+
+<body class="min-h-screen bg-slate-50 text-slate-900">
+
+    <%- include('../partials/nav') %>
+
+    <main class="mx-auto max-w-7xl px-6 py-10 lg:px-8 lg:py-14">
+
+        <!-- Page Heading -->
+        <div class="mb-8">
+            <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-rose-600">
+                Explore stays
+            </p>
+
+            <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                Our registered homes
+            </h1>
+
+            <p class="mt-2 text-slate-600">
+                A place to stay, made for you.
+            </p>
+        </div>
+
+
+        <!-- Homes -->
+        <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+            <% registeredHomes.forEach(home => { %>
+
+                <li class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg">
+
+                    <!-- Home Image -->
+                    <div class="h-56 w-full overflow-hidden">
+
+                        <img
+                            src="<%= home.image %>"
+                            alt="<%= home.houseName %>"
+                            class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                        />
+
+                    </div>
+
+
+                    <!-- Home Details -->
+                    <div class="p-5">
+
+                        <!-- House Name -->
+                        <h2 class="text-xl font-semibold text-slate-900 group-hover:text-rose-600">
+                            <%= home.houseName %>
+                        </h2>
+
+
+                        <!-- Location -->
+                        <p class="mt-2 text-sm text-slate-500">
+                            📍 <%= home.location %>
+                        </p>
+
+
+                        <!-- Price -->
+                        <p class="mt-3 text-lg font-semibold text-slate-900">
+                            ₹<%= home.price %>
+                            <span class="text-sm font-normal text-slate-500">
+                                / night
+                            </span>
+                        </p>
+
+
+                        <!-- Guests and Bedrooms -->
+                        <div class="mt-3 flex gap-4 text-sm text-slate-600">
+
+                            <span>
+                                &#11088; <%= home.ratings %> 
+                            </span>
+
+                            <span>
+                                🛏️ <%= home.bedrooms %> bedrooms
+                            </span>
+
+                        </div>
+
+
+                        <!-- Description -->
+                        <p class="mt-4 line-clamp-2 text-sm leading-6 text-slate-600">
+                            <%= home.description %>
+                        </p>
+
+                        <div class="mt-5 flex justify-end">
+                            <button
+                                type="button"
+                                class="rounded-lg bg-rose-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm transition hover:bg-rose-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600 active:scale-[0.98]"
+                            >
+                                Book
+                            </button>
+                        </div>
+                    </div>
+
+                </li>
+
+            <% }) %>
+
+        </ul>
+
+    </main>
+
+</body>
+
+</html>

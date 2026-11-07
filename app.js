@@ -3,8 +3,8 @@ const path = require('path');
 const express =  require("express");
 
 //Local Module
-const userRouter = require("./routes/userRouter.js");
-const {hostRouter} = require("./routes/hostRouter.js");
+const storeRouter = require("./routes/storeRouter.js");
+const hostRouter = require("./routes/hostRouter.js");
 const rootDir = require('./utils/pathUtil');
 const errorsController = require("./controllers/errors");
 
@@ -26,11 +26,11 @@ app.use((req,res,next)=>{
 });
 
 app.use(express.urlencoded());
+app.use(express.static(path.join(rootDir,'public' )));
 
-app.use(userRouter);
+app.use(storeRouter);
+console.log("STORE ROUTER REGISTERED");
 app.use('/host',hostRouter);
-
-app.use(express.static(path.join(rootDir,'public' )))
 
 app.use(errorsController.pageNotFound);
 const port = 3000;
