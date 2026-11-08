@@ -4,33 +4,33 @@
 
     <%- include('../partials/nav') %>
 
-    <main class="mx-auto max-w-7xl px-6 py-10 lg:px-8 lg:py-14">
+    <main class="mx-0 w-full min-w-0 max-w-7xl px-4 py-10 lg:px-8 lg:py-14">
 
         <!-- Page Heading -->
         <div class="mb-8">
-            <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-rose-600">
+            <p class="mb-2 text-2xl font-semibold uppercase tracking-wider text-rose-600">
                 Explore stays
             </p>
 
             <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                Our registered homes
+                Discover Your Perfect Stay
             </h1>
 
             <p class="mt-2 text-slate-600">
-                A place to stay, made for you.
+                Find a place that feels like home, wherever you go.
             </p>
         </div>
 
 
         <!-- Homes -->
-        <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul class="grid min-w-0 grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
             <% registeredHomes.forEach(home => { %>
 
-                <li class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg">
+                <li class="group min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg">
 
                     <!-- Home Image -->
-                    <div class="h-56 w-full overflow-hidden">
+                    <div class="h-47 w-full overflow-hidden">
 
                         <img
                             src="<%= home.image %>"
@@ -42,7 +42,7 @@
 
 
                     <!-- Home Details -->
-                    <div class="p-5">
+                    <div class="px-5 py-3">
 
                         <!-- House Name -->
                         <h2 class="text-xl font-semibold text-slate-900 group-hover:text-rose-600">
@@ -51,13 +51,13 @@
 
 
                         <!-- Location -->
-                        <p class="mt-2 text-sm text-slate-500">
+                        <p class="mt-1 text-sm text-slate-500">
                             📍 <%= home.location %>
                         </p>
 
 
                         <!-- Price -->
-                        <p class="mt-3 text-lg font-semibold text-slate-900">
+                        <p class="mt-2 text-lg font-semibold text-slate-900">
                             ₹<%= home.price %>
                             <span class="text-sm font-normal text-slate-500">
                                 / night
@@ -66,7 +66,7 @@
 
 
                         <!-- Guests and Bedrooms -->
-                        <div class="mt-3 flex gap-4 text-sm text-slate-600">
+                        <div class="mt-2 flex gap-4 text-sm text-slate-600">
 
                             <span>
                                 &#11088; <%= home.ratings %> 
@@ -80,16 +80,16 @@
 
 
                         <!-- Description -->
-                        <p class="mt-4 line-clamp-2 text-sm leading-6 text-slate-600">
+                        <p class="mt-3 line-clamp-2 text-sm leading-6 text-slate-600">
                             <%= home.description %>
                         </p>
 
-                        <div class="mt-5 flex justify-end">
+                        <div class="mt-4 flex justify-end">
                             <button
                                 type="button"
                                 class="rounded-lg bg-rose-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm transition hover:bg-rose-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600 active:scale-[0.98]"
                             >
-                                Book
+                                Reserve
                             </button>
                         </div>
                     </div>

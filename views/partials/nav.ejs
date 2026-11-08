@@ -13,17 +13,27 @@
 
             <% const inactive = "inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold tracking-wide text-slate-700 shadow-sm transition hover:border-rose-200 hover:bg-rose-50 hover:text-rose-600 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2"; %>
 
-            <a href="/" class="<%= currentPath === '/' ? active : inactive %>">
-                Home
+            <a href="/homes" class="<%= currentPath === '/homes' ? active : inactive %>">
+                Home-List
+            </a>
+
+             <a href="/favourites" class="<%= currentPath === '/favourites' ? active : inactive %>">
+                Favourites
+            </a>
+
+             <a href="/mybookings" class="<%= currentPath === '/mybookings' ? active : inactive %>">
+                My Bookings
+            </a>
+
+             <a href="/host/host-home-list" class="<%= currentPath === '/host-homes' ? active : inactive %>">
+                Host-Homes
             </a>
 
             <a href="/host/add-home" class="<%= currentPath === '/host/add-home' ? active : inactive %>">
                 Add Home
             </a>
 
-            <a href="/mybookings" class="<%= currentPath === '/store/mybookings.ejs' ? active : inactive %>">
-                My Bookings
-            </a>
+           
 
         </nav>
     </div>

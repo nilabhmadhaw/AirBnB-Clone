@@ -3,10 +3,10 @@ const storeRouter = express.Router();
 
 const homesController = require("../controllers/storeController");
 
-storeRouter.get('/',homesController.getHomes);
+storeRouter.get('/',homesController.getIndex);
 storeRouter.get('/mybookings',homesController.getmybookings);
-storeRouter.get('/index-list',homesController.getIndex);
-storeRouter.get('/favourite-list',homesController.getfavouriteList);
+storeRouter.get('/homes',homesController.getHomes);
+storeRouter.get('/favourites',homesController.getfavouriteList);
 
 
 module.exports = storeRouter;

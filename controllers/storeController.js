@@ -7,7 +7,7 @@ exports.getHomes = (req, res, next) => {
     res.render("store/home-list", {
       registeredHomes: registeredHomes,
       pageTitle: "Homes List",
-      currentPath: req.path
+      currentPath: "/homes"
     });
   });
 };
@@ -17,7 +17,7 @@ exports.getIndex = (req, res, next) => {
     res.render("store/index-list", {
       registeredHomes: registeredHomes,
       pageTitle: "Airbnb Home",
-      currentPath: req.path
+      currentPath: "/",
     });
   });
 };
@@ -25,14 +25,17 @@ exports.getIndex = (req, res, next) => {
 exports.getmybookings = (req, res, next) => {
     res.render("store/mybookings", {
       pageTitle: "My bookings",
-      currentPath: req.path,
+      currentPath: "/mybookings",
     });
 };
 
 
 exports.getfavouriteList = (req, res, next) => {
-    res.render("store/favorite-list", {
-      pageTitle: "My Favourites",
-      currentPath: req.path,
+    Home.fetchAll((registeredHomes) => {
+        res.render("store/favourite-list", {
+            registeredHomes: registeredHomes,
+            pageTitle: "My Favourites",
+            currentPath: "/favourites",
+        });
     });
 };

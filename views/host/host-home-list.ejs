@@ -8,17 +8,13 @@
 
         <!-- Page Heading -->
         <div class="mb-8">
-            <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-rose-600">
-                Explore stays
+            <p class="mb-2 text-xl font-semibold uppercase tracking-wider text-rose-600">
+                hello,host!
             </p>
 
             <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                Our registered homes
+                Here are your registered homes:
             </h1>
-
-            <p class="mt-2 text-slate-600">
-                A place to stay, made for you.
-            </p>
         </div>
 
 
@@ -84,12 +80,19 @@
                             <%= home.description %>
                         </p>
 
-                        <div class="mt-5 flex justify-end">
+                        <div class="mt-5 flex justify-end gap-3">
                             <button
                                 type="button"
-                                class="rounded-lg bg-rose-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm transition hover:bg-rose-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600 active:scale-[0.98]"
+                                class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:scale-[0.98]"
                             >
-                                Book
+                                Edit
+                            </button>
+
+                            <button
+                                type="button"
+                                class="inline-flex items-center justify-center rounded-lg bg-rose-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-rose-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600 active:scale-[0.98]"
+                            >
+                                Remove
                             </button>
                         </div>
                     </div>
