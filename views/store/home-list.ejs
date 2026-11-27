@@ -83,8 +83,12 @@
                         <p class="mt-3 line-clamp-2 text-sm leading-6 text-slate-600">
                             <%= home.description %>
                         </p>
+                        <div class="mt-4 flex items-center justify-between gap-6">
+                        <a href="homes/<%=home.id %>"class="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-800 shadow-sm transition hover:bg-gray-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-400 active:scale-[0.98]"
+                        >
+                            Details
+                        </a>
 
-                        <div class="mt-4 flex justify-end">
                             <button
                                 type="button"
                                 class="rounded-lg bg-rose-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm transition hover:bg-rose-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600 active:scale-[0.98]"
@@ -97,7 +101,6 @@
                 </li>
 
             <% }) %>
-
         </ul>
 
     </main>
